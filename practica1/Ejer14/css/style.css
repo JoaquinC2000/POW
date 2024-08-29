@@ -6,10 +6,10 @@ header{
     background: #02236D;
     width: 100%;
     line-height: 10px;
-    padding: 1px;
-    margin-bottom: 4%;
+    padding: 12px;
+    margin-bottom: 3%;
     font-family: Montserrat,Arial,sans-serif;
-    color: white;
+    color: #777777;
 }
 
 .link{
