@@ -1,0 +1,30 @@
+.contenedor{
+    background-image: url(/practico2/ejer1/recursos/madera.jpg);
+}
+
+.pizza{
+    display: block;
+    width: 80%;
+    height: auto;
+    margin: auto;
+}
+
+.text-box{
+    background-color: rgb(226, 225, 225);
+    padding: 30px;
+    width: 72.5%;
+    margin: auto;
+}
+
+h1{
+    text-align: center;
+}
+
+.parrafo{
+    margin: 25px;
+}
+
+a{
+    padding: 30px;
+    
+}
