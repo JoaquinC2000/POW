@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.contenedor{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.titulo{
+    text-align: center;
+    padding: 2%;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.colum-uno{
+    float: left; 
+    width: 22%; 
+    padding-right: 3%;
+    margin-left: 10%;
+}
+
+.colum-uno h2{
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.colum-dos{
+    float: right; 
+    width: 68%; 
+}
+
+.colum-dos h2{
+    padding-bottom: 15px;
+}
+
+.contenedor-colum{
+    display:flex; 
+    justify-content: space-between;
+    padding-top: 10px;
+}
+
+.contenedor-colum div{
+    /* Opcion 1 */
+    flex: 1;
+    padding-right: 1%;
+    /* Opcion 2 */
+    /* float: left;
+    width: 33.33%; */
+}

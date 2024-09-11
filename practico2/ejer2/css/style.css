@@ -1,0 +1,33 @@
+.cabeza{
+    background: rgb(187, 186, 186);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.primera-columna{
+    font-size: 22px;
+    font-weight: 700;
+    padding-top: 5px;
+    padding-bottom: 22px;
+}
+
+.columna{
+    background: #1bacac;
+    padding: 18px;
+    margin: 2px;
+    border-radius: 5px;
+    font-weight: 700;
+}
+
+.columna-Etiqueta-Nav{
+    background: grey;
+    padding-top: 15px;
+    padding-bottom: 150px;
+    margin: 25px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    font-weight: 700;
+}

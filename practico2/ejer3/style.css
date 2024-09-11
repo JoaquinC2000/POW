@@ -1,0 +1,32 @@
+.fondo{
+    background: rgb(214, 183, 183);
+    margin: 30px;
+    border-radius: 5px;
+}
+
+.encuadro{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+}
+
+.imagen{
+    /* background-color: orange; */
+    /* background-image: url(../ejer3/recursos/images1.jpeg); */
+    background-color: rgb(81, 155, 32);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: auto;
+    /* padding: 20px; */
+    color: #fff;
+    
+}
+
+.encuadro h2{
+    background: #807e7e;
+    width: 100%;
+    margin-top: 25px;
+    padding: 20px;
+}

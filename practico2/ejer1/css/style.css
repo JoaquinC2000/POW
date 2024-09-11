@@ -1,30 +1,47 @@
-.contenedor{
-    background-image: url(/practico2/ejer1/recursos/madera.jpg);
+@import url(../Font/Josefin_Sans/JosefinSans-VariableFont_wght.ttf);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Josefin_Sans, sans-serif;
 }
 
-.pizza{
-    display: block;
-    width: 80%;
-    height: auto;
-    margin: auto;
+.contenedor{
+    background-image: url(/practico2/ejer1/recursos/madera.jpg);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+img{
+    width: 550px;
 }
 
 .text-box{
-    background-color: rgb(226, 225, 225);
-    padding: 30px;
-    width: 72.5%;
-    margin: auto;
+    width: 550px;
+    background: white;
+    padding-top: 30px;
+    padding-bottom: 40px;
 }
 
-h1{
+.text-box h1{
+    font-size: 36px;
     text-align: center;
+    padding: 20px;
 }
 
-.parrafo{
-    margin: 25px;
-}
-
-a{
+.text-box p{
     padding: 30px;
-    
+    width: 100%;
+    color: #7a7a7a;    
+}
+
+.link{
+    font-size: 15px;
+    align-items: center;
+    padding-left: 60px;
+    padding-bottom: 20px;    
 }
