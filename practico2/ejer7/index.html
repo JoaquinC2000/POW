@@ -10,8 +10,9 @@
 <body>
     <div class="contenedor">
         <h1><b>Heladera</b></h1>
-        <div>
-            <p><b>Añade un producto:</b></p>
+
+        <div class="producto">
+            <span><b>Añade un producto:</b></span><br>
             <form>
                 <label for="Categorias:">Categoría:</label><br>
                 <select name="categorias" id="categorias">
@@ -22,8 +23,8 @@
                 </select>
             </form>
         </div>
-        <div>
-            <p><b>sabores que ofrecemos</b></p>
+        <div class="sabores">
+            <span><b>sabores que ofrecemos</b></span><br>
             <form>
                 <label for="sabor">Sabor:</label><br>
                 <input type="text">
@@ -38,19 +39,20 @@
                 <input type="radio"><label for="">Grande</label>
             </form>
         </div>
-        <div>
-            <p><b>Complementos:</b></p>
+        <div class="Complementos">
+            <span><b>Complementos:</b></span><br>
             <input type="radio"><label for="">Mani</label><br>
             <input type="radio"><label for="">Chispas de Chocolate</label><br>
             <input type="radio"><label for="">Chispas de Colores</label><br>
             <input type="radio"><label for="">Leche Condensada</label><br>
         </div>
+
         <div>
-            <input type="submit" value="Enviar">
+            <button href="enviar.html" type="submit" class="bto" style="background: rgb(57, 201, 57); color: #111;">Enviar</button>
         </div>
         <div>
-            <input type="reset" value="Borrar">
-        </div>
+            <button type="borrar" class="bto" style="background: rgb(255, 78, 78); color: #fff;">Borrar</button>
+        </div>        
     </div>
 </body>
 </html>
