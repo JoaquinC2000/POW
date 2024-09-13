@@ -4,18 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="contenedor">
-        <h1><b>Heladera</b></h1>
-
-        <div class="producto">
-            <span><b>Añade un producto:</b></span><br>
-            <form>
+        <h1><b>Heladería</b></h1>
+        <div >
+            <h6><b>Añade un producto:</b></h6>
+            <form >
                 <label for="Categorias:">Categoría:</label><br>
-                <select name="categorias" id="categorias">
+                <select class="producto" name="categorias" id="categorias">
                     <option value="" disabled selected>Selecciona categoría...</option>
                     <option value="categoria1">Torta de Chocolate</option>
                     <option value="categoria2">Helado de Fresa</option>
@@ -23,35 +21,45 @@
                 </select>
             </form>
         </div>
-        <div class="sabores">
-            <span><b>sabores que ofrecemos</b></span><br>
-            <form>
+        <div>
+            <h6><b>Sabores que ofrecemos</b></h6>   
+            <form >
                 <label for="sabor">Sabor:</label><br>
-                <input type="text">
-            </form>
-            <form></form>
-                <label for="cantidad">Cantidad:</label><br>
-                <input type="text">
+                <input class="producto" type="text">
             </form>
             <form>
-                <input type="radio"><label for="">Pequeño</label>
-                <input type="radio"><label for="">Mediano</label>
-                <input type="radio"><label for="">Grande</label>
+                <label for="cantidad">Cantidad:</label><br>
+                <input class="producto" type="text">
+            </form>
+            <form>
+                <input  type="radio"><label class="tamaño" for="">Pequeño (23)</label>
+                <input type="radio"><label class="tamaño" for="">Mediano (5)</label>
+                <input type="radio"><label class="tamaño" for="">Grande (7)</label>
             </form>
         </div>
-        <div class="Complementos">
-            <span><b>Complementos:</b></span><br>
-            <input type="radio"><label for="">Mani</label><br>
-            <input type="radio"><label for="">Chispas de Chocolate</label><br>
-            <input type="radio"><label for="">Chispas de Colores</label><br>
-            <input type="radio"><label for="">Leche Condensada</label><br>
+        <div>
+            <h6><b>Complementos:</b></h6>
+            <div class="complementos">
+                <div>
+                    <input type="checkbox"><label for="">Mani</label>
+                </div>
+                <div>
+                    <input type="checkbox"><label for="">Chispas de Chocolate</label>
+                </div>
+                <div>
+                    <input type="checkbox"><label for="">Chispas de Colores</label>
+                </div>
+                <div>
+                    <input type="checkbox"><label for="">Leche Condensada</label>
+                </div>
+            </div>
         </div>
 
         <div>
-            <button href="enviar.html" type="submit" class="bto" style="background: rgb(57, 201, 57); color: #111;">Enviar</button>
+            <input class="bto btoVerde" type="submit" value="Enviar" onclick="window.location.href='enviar.html'">
         </div>
         <div>
-            <button type="borrar" class="bto" style="background: rgb(255, 78, 78); color: #fff;">Borrar</button>
+            <input class="bto btoRojo" type="reset" value="Borrar">
         </div>        
     </div>
 </body>

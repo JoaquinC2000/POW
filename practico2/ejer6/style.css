@@ -30,13 +30,12 @@
     letter-spacing: -1px; /* Disminuir el espacio entre líneas */
     padding-left: 30px;
     padding-bottom: 5px;
-    font-size: 50px;    
+    font-size: 2.5em;    
     font-family: calibri;
     transform: scaleY(1.34); /* Estira el texto verticalmente */
     transform-origin: bottom; /* Fija la base del texto */
     /* background-color: green; */
 }
-
 
 img{
     background-size: cover;
@@ -52,14 +51,14 @@ img{
 }
 
 .cuadro3 p{
-    font-size: 25px;
+    font-size: 1.2em;
     padding-top: 5%;
     padding-left: 6%;
     padding-right: 6%;
 }
 
 .cuadro3 span{
-    font-size: 17px;
+    font-size: 1em;
     letter-spacing: 3px; /* Aumenta el espacio entre líneas */
     display: block;
     text-align: right;
