@@ -1,0 +1,13 @@
+p{
+    background: linear-gradient(90deg, rgb(0, 161, 0) 0%,  rgb(157, 255, 0) 100%);
+    padding: 3%;
+    border-radius: 2px 25px 2px 25px;
+    width: 80%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    text-align: center;
+    font-weight: 600;
+    font-family: sans-serif;
+    
+}
