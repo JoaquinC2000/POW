@@ -1,18 +1,8 @@
 function actualizarReloj(){
-    const fecha = new Date();
+    let fecha = new Date(); /* Se obtiene la fecha y hora actual*/
+    let horaActual = fecha.toLocaleTimeString();
 
-    const horas = fecha.getHours();
-    const minutos = fecha.getMinutes();
-    const segundos = fecha.getSeconds();
-
-    horas = horas < 10 ? '0' + horas : horas;
-    minutos = minutos < 10 ? '0' + minutos : minutos;
-    segundos = segundos < 10 ? '0' + segundos : segundos;
-
-    const horaActual = `${horas}:${minutos}:${segundos}`;
-
-    document.getElementById("reloj").innerText = horaActual;
+    document.getElementById("reloj").innerHTML = horaActual;
 }
 setInterval(actualizarReloj, 1000);
-
 actualizarReloj();
