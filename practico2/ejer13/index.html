@@ -5,70 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
     <link rel="stylesheet" href="/practico2/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
 </head>
 <body>
-    <div id="contenedor">
-        <div class="row">
-            <div>
-                <input type="text" id="resultado" disabled>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-3">
-                <button onclick="clearScreen()">CE</button>
-            </div>
-            <div class="col-3">
-                <button onclick="clearScreen()">C</button>
-            </div>
-            <div class="col-3">+-</div>
-            <div class="col-3">%</div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <button onclick="appendNumber('7')">7</button>
-            </div>
-            <div class="col">
-                <button onclick="appendNumber('8')">8</button>
-            </div>
-            <div class="col">
-                <button onclick="appendNumber('9')">9</button>
-            </div>
-            <div class="col">/</div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <button onclick="appendNumber('4')">4</button>
-            </div>
-            <div class="col">
-                <button onclick="appendNumber('5')">5</button>
-            </div>
-            <div class="col">
-                <button onclick="appendNumber('6')">6</button>
-            </div>
-            <div class="col">x</div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <button onclick="appendNumber('1')">1</button>
-            </div>
-            <div class="col">
-                <button onclick="appendNumber('2')">2</button>
-            </div>
-            <div class="col">
-                <button onclick="appendNumber('3')">3</button>
-            </div>
-            <div class="col">-</div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <button onclick="appendNumber('0')">0</button>
-            </div>
-            <div class="col">.</div>
-            <div class="col">
-                <button onclick="calcular()">=</button>
-            </div>
-            <div class="col">+</div>
+    <div class="contenedor">
+        <div class="calculadora">
+            <div class="pantalla1"></div>
+            <div class="pantalla">0</div>
+            <button id="ce" class="btn">CE</button>
+            <button id="c" class="btn">C</button>
+            <button id="borrar" class="btn">←</button>
+            <button class="btn btnOpe">%</button>
+            <button class="btn btnNum">7</button>
+            <button class="btn btnNum">8</button>
+            <button class="btn btnNum">9</button>
+            <button class="btn btnOpe">÷</button>
+            <button class="btn btnNum">4</button>
+            <button class="btn btnNum">5</button>
+            <button class="btn btnNum">6</button>
+            <button class="btn btnOpe">x</button>
+            <button class="btn btnNum">1</button>
+            <button class="btn btnNum">2</button>
+            <button class="btn btnNum">3</button>
+            <button id="resta" class="btn btnOpe">-</button>
+            <button id="cero" class="btn btnNum">0</button>
+            <button class="btn btnNum">.</button>
+            <button id="igual" class="btn">=</button>
+            <button id="suma" class="btn btnOpe">+</button> 
         </div>
     </div>
     <script src="script.js"></script>
