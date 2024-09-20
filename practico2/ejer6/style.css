@@ -26,7 +26,7 @@
 }
 .cuadro1 p{
     width: 80%;
-    line-height: 1; /* ajustar el espacio entre líneas en un párrafo */
+    line-height: 1; /*ajustar el espacio entre líneas en un párrafo*/
     letter-spacing: -1px; /* Disminuir el espacio entre líneas */
     padding-left: 30px;
     padding-bottom: 5px;
