@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: Fredoka, sans-serif;
+}
+html, body{
+    height: 100%;
+}
+.contact{
+    display: flex;
+    justify-content: center;
+    background-color: green;
+    min-height: 100vh; /* Ocupa el 100% de la altura de la pantalla */
+    /* align-items: center; */
+}
+.fila1, .fila2{
+    /* background-color: lightcoral; */
+}
+.contact .fila1, .contact .fila2{
+    width: 50%;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+.fila1 h2, .fila2 h2{
+    align-self: self-start;
+}
+.contact .fila1{
+    margin-left: 10rem;
+}
+.contact .fila2{
+    margin-right: 10rem;
+}
+.contact .fila1 .ubicacion,
+.contact .fila1 .siguenos{
+    height: 50%;
+}
+
+.heading{
+    font-size: 2rem;
+    width: 50%;
+    text-align: left;
+}
+.contact form{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.contact h2{
+    color: #fff;
+    margin-bottom: 30px;
+}

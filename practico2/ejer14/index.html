@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onMouseOver="cambioAhora(this)" onMouseOut="original(this)" onClick="mostrarmens()">pasar por aqui</button>
+
+    <script>
+        function cambioAhora(elem){
+            elem.style.color = '#1234';
+            elem.style.padding = '20px';
+            elem.style.fontSize = '40px';
+        }
+
+        function original(elem){
+            elem.style.color = 'black';
+            elem.style.padding = '0px';
+            elem.style.fontSize = '15px';
+        }
+
+        function mostrarmens(){
+            alert('elem');
+        }
+    </script>
+</body>
+</html>

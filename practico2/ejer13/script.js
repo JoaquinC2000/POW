@@ -20,8 +20,8 @@ botones.forEach((boton) => {
             igual = false;
             return;
         }
-        if(boton.id === "borrar" || pantalla.textContent === "Error!"){
-            if(pantalla.textContent.length === 1){
+        if(boton.id === "borrar" ){
+            if(pantalla.textContent.length === 1 || pantalla.textContent === "Error!"){
                 pantalla.textContent = "0";
             }else{
                 pantalla.textContent = pantalla.textContent.slice(0, -1);
@@ -34,37 +34,93 @@ botones.forEach((boton) => {
         }
 
         if(boton.id === "suma"){
-            if(!igual){
-                pantalla1.textContent = eval(pantalla1.textContent + pantalla.textContent) + "+";
+            if(igual){
+                pantalla1.textContent = pantalla.textContent + "+";
+                igual = false;
             }else{
-                pantalla1.textContent = pantalla.textContent + "+"; 
+                pantalla1.textContent = eval(pantalla1.textContent + pantalla.textContent) + "+"; 
             }
             pantalla.textContent = "0";
             return;
         }
 
         if(boton.id === "resta"){
-            if(!igual){
-                pantalla1.textContent = eval(pantalla1.textContent + pantalla.textContent) + "-";
+            if(igual){
+                pantalla1.textContent = pantalla.textContent + "-";
+                igual = false;
             }else{
-                pantalla1.textContent = pantalla.textContent + "-"; 
+                pantalla1.textContent = eval(pantalla1.textContent + pantalla.textContent) + "-"; 
             }
             pantalla.textContent = "0";
             return;
         }
 
+        if(boton.id === "multi"){
+            if(igual){
+                pantalla1.textContent = pantalla.textContent + "*";
+                igual = false;
+            }else{
+                pantalla1.textContent = eval(pantalla1.textContent + pantalla.textContent) + "*"; 
+            }
+            pantalla.textContent = "0";
+            return;
+        }
+
+        if(boton.id === "multi"){
+            if(igual){
+                pantalla1.textContent = pantalla.textContent + "*";
+                igual = false;
+            }else{
+                pantalla1.textContent = eval(pantalla1.textContent + pantalla.textContent) + "*"; 
+            }
+            pantalla.textContent = "0";
+            return;
+        }
+
+        if(boton.id === "div"){
+            if(pantalla.textContent === "0"){
+                return; // Evita división por cero
+            }
+            if(igual){
+                pantalla1.textContent = pantalla.textContent + "÷";
+                igual = false;
+            }else{
+                pantalla1.textContent = eval(pantalla1.textContent + pantalla.textContent) + "÷"; 
+            }
+            pantalla.textContent = "0";
+            return;
+        }
+
+        if(boton.id === "mod"){
+            if(pantalla1.textContent !== ""){ // Solo si ya hay algo en pantalla1
+                pantalla.textContent = parseFloat(pantalla.textContent) / 100;
+            }else{
+                pantalla.textContent = "0";
+                pantalla1.textContent = "0";
+            }
+            return;
+        }
+        
+
         if(boton.id === "igual"){
             try {
                 igual = true;
                 let num = pantalla.textContent;
-                pantalla.textContent = eval(pantalla1.textContent + pantalla.textContent);
+                pantalla.textContent = eval(pantalla1.textContent.replace(/÷/g, "/") + num);
                 pantalla1.textContent = pantalla1.textContent + num + "=";
             } catch {
                 pantalla.textContent = "Error!";
             }
             return;
         }
- 
+
+        if(boton.id === "punto"){
+            if(!pantalla.textContent.includes(".")){ // Verifica si ya hay un punto
+                pantalla.textContent += ".";
+            }
+            return;
+        }
+
         if (pantalla.textContent === "0" || pantalla.textContent === "Error!") {
             pantalla.textContent = botonApretado;
         } else if(igual){
@@ -72,57 +128,8 @@ botones.forEach((boton) => {
             pantalla.textContent = botonApretado;
             igual = false;
         }else {
-        pantalla.textContent += botonApretado;
+            pantalla.textContent += botonApretado;
         }
+        
     });
 });
-
-// function appendNumber(num){
-//     if(pantalla.textContent === "0"){
-//         pantalla.textContent = num;
-//     }else{
-//         pantalla.textContent += num;
-//     }
-// }
-
-// // setOperacion(op){
-
-// // }
-
-// function clearScreen(){
-//     currentNumber = '';
-//     previousNumber = '';
-//     operation = '';
-//     document.getElementById("resultado").value = '';
-// }
-
-// function calcular(){
-//     let resultado;
-//     const prev = parseFloat(previousNumber);
-//     const curr = parseFloat(currentNumber);
-
-//     if(isNaN(prev) || isNaN(curr)) return;
-
-//     switch(operation){
-//         case '+':
-//             resultado = prev + curr;
-//             break;
-//         case '-':
-//             resultado = curr - prev;
-//             break;
-//         case '*':
-//             resultado = prev * curr;
-//             break;
-//         case '/':
-//             resultado = curr / curr;
-//             break;
-//         default:
-//             return;
-//     }
-
-//     currentNumber = resultado.toString();
-//     operation = '';
-//     previousNumber = '';
-//     historial = '';
-//     actualizarPantalla();
-// }
