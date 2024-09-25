@@ -14,39 +14,41 @@
 </head>
 
 <body>
-    <!-- <div class="container mt-4">
-        <form>
-            <label class="form-label" for="campo_nombre">Nombre:</label>
-            <input class="form-range" type="range" id="campo_nombre" placeholder="nombre..." >
-        </form>
-    </div> -->
 
     <section class="contact" id="contact">
         <div class="fila1">
             <div class="ubicacion">
                 <h2 class="heading">Ubicacion</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
             </div>
 
             <div class="siguenos">
                 <h2 class="heading">Siguenos</h2>
+                
+                <div class="social">
+                    <a href="#"><i class='bx bxl-linkedin'></i></a>
+                    <a href="#"><i class='bx bxl-github'></i></a>
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                    <a href="#"><i class='bx bxl-discord-alt'></i></a>
+                </div>
             </div>
         </div>
         <div class="fila2">
             <h2 class="heading">Enviar formulario</h2>
             <form>
-                <label for="name">Nombre</label>
-                <input type="text" name="name" id="name">
+                <div class="input-box">
+                    <input type="text" name="name" id="name" placeholder="Nombre">
+    
+                    <input type="email" name="email" id="email" placeholder="Correo electronico">
+    
+                    <input type="text" name="subject" id="subject" placeholder="Asunto">
+                </div>
 
-                <label for="email">Correo electronico</label>
-                <input type="email" name="email" id="email">
-
-                <label for="subject">Asunto</label>
-                <input type="text" name="subject" id="subject">
-
-                <label for="coment">Comentario</label>
-                <textarea name="coments" id="coments" cols="30" rows="10"></textarea>
-
-                <input type="submit" type="submit" value="Enviar">
+                <div>
+                    <textarea name="coments" id="coments" cols="30" rows="5" placeholder="Mensaje"></textarea>
+    
+                    <input class="btn" type="submit" value="Enviar">
+                </div>
             </form>
         </div>
     </section>
