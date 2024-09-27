@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: lightslategray;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ingrese el Número</h1>
+    <p>Ingresa un número entre 1 y 1000:</p>
+
+    <input type="number" id="numeroIngresado" placeholder="Ingresa un numero">
+    <button onclick="compararNumero()">Comprovar</button>
+
+    <p id="resultado"></p>
+
+    <p>Intentos Actuale: <span id="intentosActuales">0</span></p>
+    <h2>Estadísticas</h2>
+    <p>Mejor puntaje: <span id="mejorPuntaje">N/A</span></p>
+    <p>Cantidad de partidas finalizadas: <span id="partidasFinalizadas">0</span></p>
+    <p>Promedio de intentos: <span id="promedio">0</span></p>
+
+    <button onclick="reiniciarJuego()">Reiniciar Juego</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
