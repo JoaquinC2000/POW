@@ -133,3 +133,23 @@ botones.forEach((boton) => {
         
     });
 });
+
+
+const alternarBtn = document.getElementById("alternar-tema-btn");
+const alternarLink = document.getElementById("alternar-style");
+
+const currentTheme  = localStorage.getItem("alternar") || style.css;
+alternarLink.href = currentTheme;
+
+ // Evento para cambiar el tema
+ alternarBtn.addEventListener('click', function() {
+    if (alternarLink.href.includes('style.css')) {
+        alternarLink.href = 'style2.css';  // Cambia al estilo alternativo
+        localStorage.setItem('alternar', 'style2.css');  // Guardar la preferencia en localStorage
+    } else {
+        alternarLink.href = 'style.css';  // Cambia al estilo predeterminado
+        localStorage.setItem('alternar', 'style.css');  // Guardar la preferencia en localStorage
+    }
+});
+
+

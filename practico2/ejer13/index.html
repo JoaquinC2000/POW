@@ -1,14 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
     <link rel="stylesheet" href="/practico2/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link id="alternar-style" rel="stylesheet" href="style.css">
+    <style>
+        .alternar-tema {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+        .alternar-tema:hover{
+            transform: scale(1.1);
+        }
+    </style>
 </head>
+
 <body>
     <div class="contenedor">
+
+        <button class="alternar-tema" id="alternar-tema-btn">🌗</button>
+        
         <div class="calculadora">
             <div class="pantalla1"></div>
             <div class="pantalla">0</div>
@@ -31,9 +53,10 @@
             <button id="cero" class="btn btnNum">0</button>
             <button id="punto" class="btn btnNum">.</button>
             <button id="igual" class="btn">=</button>
-            <button id="suma" class="btn btnOpe">+</button> 
+            <button id="suma" class="btn btnOpe">+</button>
         </div>
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>
