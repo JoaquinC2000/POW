@@ -6,7 +6,7 @@ body {
     background-color: #f7f7f7;
     color: #333;
     text-align: center;
-    padding: 20px;
+    padding: 40px;
 }
 .contenedor{
     background-color: #cfcfcf;
@@ -53,6 +53,7 @@ button {
     border-radius: 5px;
     cursor: pointer;
     margin-top: 10px;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
@@ -63,15 +64,6 @@ button:hover {
     font-size: 18px;
     margin-top: 20px;
     color: #ff5722;
-    min-height: 50px; /* Espacio reservado aunque no haya texto */
-    display: flex;
-    align-items: center; /* Para centrar el texto verticalmente */
-    justify-content: center; /* Para centrar el texto horizontalmente */
-}
-#ganada {
-    color: rgb(0, 148, 0);
-    font-size: 1.3rem;
-    font-weight: bold;
     min-height: 50px; /* Espacio reservado aunque no haya texto */
     display: flex;
     align-items: center; /* Para centrar el texto verticalmente */
