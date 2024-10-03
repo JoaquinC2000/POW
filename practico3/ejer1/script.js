@@ -4,17 +4,27 @@ let mejorPuntaje = Infinity;
 let partidasFinalizadas = 0;
 let totalIntentos = 0;
 
+// document.getElementById("inputNumero").focus();
+document.getElementById("comprobar").addEventListener('click', compararNumero);
+document.getElementById("inputNumero").sdd.addEventListener("keydown", function(event){
+    if(event.key === "Enter"){
+        compararNumero();
+    }
+});
+
 function compararNumero(){
-    let numeroIngresado = document.getElementById("numeroIngresado").value.trim();
-    const numero = parseInt(numeroIngresado);
-    
+    let numeroIngresado  = document.getElementById("inputNumero").value.trim();
+    const numero = parseInt(numeroIngresado );
     const resultado = document.getElementById("resultado");
-    if(numeroIngresado === ""){
+    const ganada = document.getElementById("ganada");
+    document.getElementById("inputNumero").focus();
+
+    if(numeroIngresado  === ""){
         resultado.textContent = "cha migo, no da";
         return;
     }
 
-    if(isNaN(numeroIngresado) || numeroIngresado < 1 || numeroIngresado > 1000){
+    if(isNaN(numero) || numero < 1 || numero > 1000){
         resultado.textContent = "Por favor ingrese un número válido entre 1 y 1000"
         return;
     }
@@ -22,26 +32,17 @@ function compararNumero(){
     intentos++;
     document.getElementById("intentos").textContent = intentos;
 
-    if (numeroIngresado < numeroAleatorio){
+    if (numero < numeroAleatorio){
         resultado.textContent = "El número ingresado es muy menor " + numeroAleatorio;
-    } else if (numeroIngresado > numeroAleatorio){
+    } else if (numero > numeroAleatorio){
         resultado.textContent = " El número ingresado es alto";
     } else {
-        resultado.textContent = "¡Felicidades! Adivinaste el número";
-        partidasFinalizadas++;
-        totalIntentos += intentos;
-
-        if(intentos < mejorPuntaje){
-            mejorPuntaje = intentos; 
-            document.getElementById("mejorPuntaje").textContent = mejorPuntaje;
-        }
-
-        document.getElementById("partidasFinalizadas").textContent = partidasFinalizadas;
-        const promedio = (totalIntentos / partidasFinalizadas);
-        document.getElementById("promedio").textContent = promedio;
+        resultado.textContent = "";
+        ganada.textContent = "¡Felicidades! Adivinaste el número";
+        finalizarPartida();
     }
 
-    numeroIngresado = document.getElementById("numeroIngresado").value = "";
+    numeroIngresado  = document.getElementById("inputNumero").value = "";
 
 }
 
@@ -49,22 +50,26 @@ function finalizarPartida(){
     partidasFinalizadas++;
     totalIntentos += intentos;
 
-    if(intentos < mejorPuntajes){
-        mejorPuntajes = intentos; 
-        document.getElementById("mejorPuntaje").textContent = 'Mejor puntaje: ${mejorPuntaje}';
+    if(intentos < mejorPuntaje){
+        mejorPuntaje = intentos; 
+        document.getElementById("mejorPuntaje").textContent = mejorPuntaje;
     }
 
-    document.getElementById("partidasFinalizadas").textContent = 'Cantidad de partidas finalizadas: ${totalPartidas}';
-    const promedio = (totalIntentos / partidasFinalizadas).toFixer(2);
-    document.getElementById("promedio").textContent = 'Promedio de intentos: ${promedio}';
+    document.getElementById("partidasFinalizadas").textContent = partidasFinalizadas;
+    const promedio = (totalIntentos / partidasFinalizadas).toFixed(2);
+    document.getElementById("promedio").textContent = promedio;
+
+    // reiniciarPartida(false);
 }
 
-function reiniciarPartida(){
+function reiniciarJuego(resetIntentos = true){
     numeroAleatorio = Math.floor(Math.random() * 1000) + 1;
     intentos = 0;
 
-    document.getElementById("intentosActuales").textContent = intentos 
-    resultado.textContent = "";
-    document.getElementById("numeroIngresado").value = "";
+    document.getElementById("intentos").textContent = intentos 
+    document.getElementById("resultado").textContent = "";
+    // resultado.textContent = "";
+    document.getElementById("inputNumero").value = "";
+    document.getElementById("inputNumero").focus();
 }
 

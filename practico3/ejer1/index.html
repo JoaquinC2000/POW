@@ -4,29 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        body{
-            background-color: lightslategray; 
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Ingrese el Número</h1>
-    <p>Ingresa un número entre 1 y 1000:</p>
-
-    <input type="number" id="numeroIngresado" placeholder="Ingresa un numero">
-    <button onclick="compararNumero()">Comprovar</button>
-
-    <p id="resultado"></p>
-
-    <p>Intentos Actuale: <span id="intentos">0</span></p>
-    <h2>Estadísticas</h2>
-    <p>Mejor puntaje: <span id="mejorPuntaje">N/A</span></p>
-    <p>Cantidad de partidas finalizadas: <span id="partidasFinalizadas">0</span></p>
-    <p>Promedio de intentos: <span id="promedio">0</span></p>
-
-    <button onclick="reiniciarJuego()">Reiniciar Juego</button>
+    <div class="contenedor">
+        <h1>Adivina el Número</h1>
+        <p>Ingresa un número entre 1 y 1000:</p>
+    
+        <div class="input-box">
+            <input type="number" id="inputNumero" min="1" max="1000" placeholder="Ingresa un numero">
+            <button id="comprobar">Comprobar</button>
+        </div>
+    
+        <p id="resultado"></p>
+        <p id="ganada"></p>
+    
+        <p>Intentos Actuale: <span id="intentos">0</span></p>
+        <h2>Estadísticas</h2>
+        <p>Mejor puntaje: <span id="mejorPuntaje">--</span></p>
+        <p>Cantidad de partidas finalizadas: <span id="partidasFinalizadas">0</span></p>
+        <p>Promedio de intentos: <span id="promedio">0</span></p>
+    
+        <button onclick="reiniciarJuego()">Reiniciar Juego</button>
+    </div>
 
     <script src="script.js"></script>
 </body>
 </html>
+

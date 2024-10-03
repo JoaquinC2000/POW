@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sirin+Stencil&display=swap');
+
+body {
+    font-family: 'Inclusive Sans', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+}
+.contenedor{
+    background-color: #cfcfcf;
+    position: absolute;
+    width: 50%;
+    left: 25%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    padding: 5px 0 50px 0;
+}
+.input-box{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 0;
+}
+h1 {
+    color: #4CAF50;
+    font-family: 'Sirin Stencil', sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+input[type="number"] {
+    padding: 10px;
+    font-size: 16px;
+    width: 300px;
+    border: 2px solid #4CAF50;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#resultado {
+    font-size: 18px;
+    margin-top: 20px;
+    color: #ff5722;
+    min-height: 50px; /* Espacio reservado aunque no haya texto */
+    display: flex;
+    align-items: center; /* Para centrar el texto verticalmente */
+    justify-content: center; /* Para centrar el texto horizontalmente */
+}
+#ganada {
+    color: rgb(0, 148, 0);
+    font-size: 1.3rem;
+    font-weight: bold;
+    min-height: 50px; /* Espacio reservado aunque no haya texto */
+    display: flex;
+    align-items: center; /* Para centrar el texto verticalmente */
+    justify-content: center; /* Para centrar el texto horizontalmente */
+}
+
+#intentos,
+#mejorPuntaje,
+#partidasFinalizadas,
+#promedio {
+    font-weight: bold;
+    color: #333;
+}
+
+h2 {
+    color: #2196F3;
+    margin-top: 30px;
+}
+
+p {
+    margin: 10px 0;
+}
