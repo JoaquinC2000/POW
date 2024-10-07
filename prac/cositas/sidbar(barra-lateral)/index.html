@@ -30,29 +30,33 @@
                 </a>
             </li>
             <li>
-                <button class="barra-desplegable">
+                <button onclick="toggleSubMenu(this)" class="barra-desplegable">
                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M560-320h80v-80h80v-80h-80v-80h-80v80h-80v80h80v80ZM160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h240l80 80h320q33 0 56.5 23.5T880-640v400q0 33-23.5 56.5T800-160H160Zm0-80h640v-400H447l-80-80H160v480Zm0 0v-480 480Z"/></svg>
                     <span>Crear</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+                    <svg id="icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
                 </button>
                 <ul class="sub-menu">
-                    <li><a href="#"></a>Carpeta</li>
-                    <li><a href="#"></a>Documento</li>
-                    <li><a href="#"></a>Proyecto</li>
+                    <div>
+                        <li><a href="#">Carpeta</a></li>
+                        <li><a href="#">Documento</a></li>
+                        <li><a href="#">Proyecto</a></li>
+                    </div>
                 </ul>
             </li>
             <li>
-                <button class="barra-desplegable">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M560-320h80v-80h80v-80h-80v-80h-80v80h-80v80h80v80ZM160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h240l80 80h320q33 0 56.5 23.5T880-640v400q0 33-23.5 56.5T800-160H160Zm0-80h640v-400H447l-80-80H160v480Zm0 0v-480 480Z"/></svg>
+                <button onclick="toggleSubMenu(this)" class="barra-desplegable">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M222-200 80-342l56-56 85 85 170-170 56 57-225 226Zm0-320L80-662l56-56 85 85 170-170 56 57-225 226Zm298 240v-80h360v80H520Zm0-320v-80h360v80H520Z"/></svg>
                     <span>Todo-Listas</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+                    <svg id="icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
                 </button>
                 <ul class="sub-menu">
-                    <li><a href="#"></a>Trabajar</li>
-                    <li><a href="#"></a>Privado</li>
-                    <li><a href="#"></a>Codigo</li>
-                    <li><a href="#"></a>Gardening</li>
-                    <li><a href="#"></a>Escuela</li>
+                    <div>
+                        <li><a href="#">Trabajar</a></li>
+                        <li><a href="#">Privado</a></li>
+                        <li><a href="#">Codigo</a></li>
+                        <li><a href="#">Gardening</a></li>
+                        <li><a href="#">Escuela</a></li>
+                    </div>
                 </ul>
             </li>
             <li>
@@ -91,6 +95,7 @@
                 sequi?</p>
         </div>
     </main>
+    <script type="text/javascript" src="script.js" defer></script>
 </body>
 
 </html>
