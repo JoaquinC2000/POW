@@ -33,6 +33,17 @@ body{
     padding: 5px 1em;
     background-color: var(--base-clr);
     border-right: 1px solid var(--linea-clr);
+
+    position: sticky;
+    top: 0;
+    align-items: start;
+    transition: 300ms ease-in-out;
+    overflow: hidden;
+    text-wrap: nowrap;
+}
+#sidebar.close{
+    padding: 5px;
+    width: 60px;
 }
 #sidebar ul{
     list-style: none;
@@ -45,7 +56,7 @@ body{
         font-weight: 600;
     }   
 }
-#sidebar ul li.active{
+ #sidebar ul li.active, .active span{
     color: var(--acento-clr);
 
     svg{
@@ -53,7 +64,7 @@ body{
     }
 }
 
-#sidebar a, #sidebar .barra-desplegable{
+#sidebar a, #sidebar .barra-desplegable, #sidebar .logo{
     border-radius: .5em;
     padding: .85em;
     text-decoration: none;
@@ -70,10 +81,9 @@ body{
     border: none;
     font: inherit;
     cursor: pointer;
-}
+}   
 #sidebar svg{
     flex-shrink: 0;
-    fill: var(--texto-clr);
 }
 #sidebar a span, #sidebar .barra-desplegable span{
     flex-grow: 1;
@@ -96,21 +106,33 @@ body{
 .barra-desplegable svg{
     transition: 200ms ease;
 }
-#icon{
-    rotate: 90deg;
-}
+
+.rotar svg:last-child{
+    rotate: -90deg;
+    fill: rgb(0, 225, 255);
+ }
 .rotar #icon{
-    rotate: 0deg;
+    rotate: -180deg;
 }
 #sidebar .sub-menu a{
     padding-left: 2em;
 }
 
+#toggle-btn{
+    margin-left: auto;
+    padding: 1em;
+    border: none;
+    border-radius: .5em;
+    background: none;
+    cursor: pointer;
 
-
-
-
-
+    svg{
+        transition: rotate 150ms ease;
+    }
+}
+#toggle-btn:hover{
+    background-color: var(--hover-clr);
+}
 
 main{
     padding: min(30px, 7%);
@@ -128,4 +150,78 @@ main p{
     padding: min(3em, 15%);
 
     h2, p{margin-top: 15px}
+}
+
+
+@media(max-width: 800px){
+    body{
+        grid-template-columns: 1fr;
+    }
+    main{
+        padding: 2em 1em 60px 1em;
+    }
+    .contenedor{
+        border: none;
+        padding: 0;
+    }
+    #sidebar{
+        height: 60px;
+        width: 100%;
+        border-right: none;
+        border-top: 1ps solid var(--linea-clr);
+        padding: 0;
+        position: fixed;
+        top: unset;
+        bottom: 0;
+
+        > ul{
+            padding: 0;
+            display: grid;
+            grid-auto-columns: 60px;
+            grid-auto-flow: column;
+            align-items: center;
+            overflow-x: scroll;
+        }
+        ul li{
+            height: 100%;
+        }
+        ul a, ul .barra-desplegable{
+            width: 60px;
+            height: 60px;
+            padding: 0;
+            border-radius: 0;
+            justify-content: center;
+        }
+
+        ul li .sub-menu.show{
+            position: fixed;
+            bottom: 60px;
+            left: 0;
+            box-sizing: border-box;
+            height: 60px;
+            width: 100%;
+            background-color: var(--hover-clr);
+            border-top: 1px solid var(--linea-clr);
+            display: flex;
+            justify-content: center;
+
+            > div{
+                overflow-x: auto;
+            }
+            li{
+                display: inline-flex;
+            }
+            a{
+                box-sizing: border-box;
+                padding: 1em;
+                width: auto;
+                justify-content: center;
+            }
+        }
+        
+
+        ul li span, ul li:first-child, .barra-desplegable svg:last-child{
+            display: none;
+        }
+    }
 }
