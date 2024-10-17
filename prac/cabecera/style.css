@@ -22,6 +22,9 @@ body{
     background: var(--bg-color);
     color: var(--text-color);
 }
+body.dark, .ejer2.dark{
+    background: var(--text-color);
+}
 .header{
     position: fixed;
     top: 0;
@@ -48,6 +51,10 @@ body{
 .logo span{
     text-shadow: 0 0 25px var(--main-color);
 }
+.navbar{
+    display: flex;
+    align-items: center;
+}
 .navbar a{
     font-size: 1.8rem;
     color: var(--text-color);
@@ -56,6 +63,57 @@ body{
     transition: 0.3s ease;
     border-bottom: 3px solid transparent;
 }
+
+.switch{
+    margin-left: 4rem;
+    background: var(--text-color);
+    border-radius: 1000px;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    outline: none;
+}
+.switch span{
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    color: var(--bg-color);
+}
+.switch::after {
+    content: "";
+    display: block;
+    width: 33px;
+    height: 33px;
+    position: absolute;
+    background: var(--second-bg-color);
+    top: -1px;
+    left: unset;
+    right: 0;
+    border-radius: 100px;
+    transition: .3s ease all;
+    box-shadow: 0 0 2px 2px rgba(255, 255, 255, 0.2);
+
+}
+.switch.active{
+    background: #111;
+    color: #fff;
+}
+.switch.active span:last-child{
+    color: white;
+}
+.switch.active::after{
+    background: var(--text-color);
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
+    right: unset;
+    left: 0;
+}
+
 .navbar a:hover,
 .navbar a.active{
     color: var(--main-color);
@@ -87,3 +145,4 @@ span{
 .ejer3{
     background: #333333;
 }
+

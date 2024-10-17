@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Entities Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Entities Manager</h1>
+        
+        <!-- Search bar -->
+        <input type="text" id="searchInput" placeholder="Search entities..." class="form-control mb-3">
+
+        <!-- Filters and sort options -->
+        <div class="d-flex justify-content-between mb-3">
+            <select id="filterField" class="form-select">
+                <option value="">Filter by field</option>
+                <option value="name">Name</option>
+                <option value="email">Email</option>
+            </select>
+
+            <select id="sortField" class="form-select">
+                <option value="">Sort by</option>
+                <option value="id">ID</option>
+                <option value="name">Name</option>
+            </select>
+        </div>
+
+        <!-- Entities table -->
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="entitiesTableBody">
+                <!-- Data will be dynamically inserted here -->
+            </tbody>
+        </table>
+
+        <!-- Pagination -->
+        <nav>
+            <ul id="pagination" class="pagination"></ul>
+        </nav>
+
+        <!-- Add/Edit form -->
+        <div class="mt-4">
+            <h2 id="formTitle">Add New Entity</h2>
+            <form id="entityForm">
+                <input type="hidden" id="entityId">
+                <div class="mb-3">
+                    <input type="text" id="name" class="form-control" placeholder="Name">
+                </div>
+                <div class="mb-3">
+                    <input type="email" id="email" class="form-control" placeholder="Email">
+                </div>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
