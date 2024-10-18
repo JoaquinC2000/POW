@@ -18,29 +18,58 @@
                 </div>
                 <!-- <p>LOGO .</p> -->
             </div>
-            <div class="nav-menu">
+            <div class="nav-menu" id="navMenu">
                 <ul>
                     <li><a href="#" class="link active">Menu</a></li>
                     <li><a href="#" class="link">Blog</a></li>
-                    <li><a href="#" class="link">Serrvicios</a></li>
+                    <li><a href="#" class="link">Servicios</a></li>
                     <li><a href="#" class="link">Sobre mi</a></li>
                 </ul>
             </div>
             <div class="nav-boton">
-                <button class="btn white-btn" id="loginBtn">Sign In</button>
-                <button class="btn" id="registrarBtn">Sign In</button>
+                <button class="btn white-btn" id="loginBtn" onclick="login()">Iniciar Sesión</button>
+                <button class="btn" id="registerBtn" onclick="register()">Registrarse</button>
             </div>
             <div class="nav-menu-btn">
-                <i class="bx bx-menu"></i>
+                <i class="bx bx-menu" onclick="myMenuFunction()"></i>
             </div>
         </nav>
 
 
         <div class="form-box">
-            <!-- ----------------- Registrar form ------------------------------ -->
+
+            <!-- ----------------- Iniciar sesion ------------------------------ -->
+            <div class="login-container" id="login">
+                <div class="top">
+                    <span>¿No tienes una cuenta? <a href="#" onclick="register()">Registrarse</a></span>
+                    <header>Iniciar Sesión</header>
+                </div>
+                <div class="input-box">
+                    <input type="text" class="input-field" placeholder="Username or Email">
+                    <i class="bx bx-user"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" class="input-field" placeholder="Password">
+                    <i class="bx bx-lock-alt"></i>
+                </div>
+                <div class="input-box">
+                    <input type="submit" class="submit" value="Iniciar Sesión">
+                </div>
+                <div class="two-col">
+                    <div class="one">
+                        <input type="checkbox" id="register-check">
+                        <label for="register-check"> Remember me</label>
+                    </div>
+                    <div class="two">
+                        <label><a href="#">¿Olvidaste la contraseña?</a></label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ----------------- Registrar ------------------------------ -->
             <div class="register-container" id="register">
                 <div class="top">
-                    <span>¿Tienes una cuenta? <a href="#" onclick="login()">Crear una cuenta</a></span>
+                    <span>¿Tienes una cuenta? <a href="#" onclick="login()">Iniciar Sesión</a></span>
                     <header>Registrarse</header>
                 </div>
                 <div class="two-forms">
@@ -73,13 +102,10 @@
                         <label><a href="#">Terminos y condiciones</a></label>
                     </div>
                 </div>
-
             </div>
-
-
         </div>
-
     </div>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
