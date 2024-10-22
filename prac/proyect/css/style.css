@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: poppins, sans-serif;
+}
+:root{
+    --bg-color: #ffb9da;
+    --second-bg-color: #fd2087;
+    --text-color: white;
+    --main-color: rgb(53, 53, 53);
+    --primary-color: #ffffff;
+    --second-color: #ffffff;
+}
+html{
+    font-size: 60%;
+    overflow-x: hidden;
+}
+body{
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 4rem;
+    background: linear-gradient( rgba(102, 0, 102, 0.4), transparent);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 5;
+}
+.logo{
+    font-size: 5px;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+}
+.navbar a, .input-box{
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+.navbar i{
+    font-size: 2.8rem;
+}
+.navbar a:hover, .navbar i:hover{
+    color: var(--main-color);
+    border-bottom: 3px solid var(--main-color);
+}
+.search i{
+    position: relative;
+    top: -26px;  
+    left: 14px;
+    color: #111;
+}
+.input-field{
+    font-size: 15px;
+    background: #fff;
+    color: #fff;
+    height: 30px;
+    width: 100%;
+    padding: 0 10px 0 45px;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    transition: .2s ease;
+}
+.input-box{
+    margin-top: 30px;
+}
+section{
+    padding: 13rem 5rem;
+}
+
+.descripcion{
+    width: 100%;
+    height: 30px;
+    font-size: 12px;
+    padding: 5px 5px;
+    border-radius: 5px;
+    border: 1px solid rgba(0,0,0,0.15);
+    resize: none;
+
+}
+textarea::-webkit-scrollbar{
+    width: 0px;
+}
+
