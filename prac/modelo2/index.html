@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Tarea</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Agregar Tarea</h1>
+        <form action="#" method="POST">
+            <!-- Descripción de la tarea -->
+            <label for="descripcion">Descripción:</label>
+            <textarea id="descripcion" name="descripcion" required></textarea>
+            
+            <!-- Fecha inicio -->
+            <label for="fechaInicio">Fecha de Inicio:</label>
+            <input type="date" id="fechaInicio" name="fechaInicio" required>
+
+            <!-- Fecha finalización -->
+            <label for="fechaFinalizacion">Fecha de Finalización:</label>
+            <input type="date" id="fechaFinalizacion" name="fechaFinalizacion" required>
+
+            <!-- Prioridad -->
+            <label for="prioridad">Prioridad:</label>
+            <select id="prioridad" name="prioridad" required>
+                <option value="alta">Alta</option>
+                <option value="media">Media</option>
+                <option value="baja">Baja</option>
+            </select>
+
+            <!-- Estado -->
+            <label for="estado">Estado:</label>
+            <select id="estado" name="estado" required>
+                <option value="pendiente">Pendiente</option>
+                <option value="iniciado">Iniciado</option>
+                <option value="terminado">Terminado</option>
+            </select>
+
+            <!-- Selección del cliente -->
+            <label for="cliente">Cliente:</label>
+            <select id="cliente" name="cliente" required>
+                <option value="">Seleccione un cliente</option>
+                <option value="pendiente">Pendiente</option>
+                <option value="iniciado">Iniciado</option>
+                <option value="terminado">Terminado</option>
+            </select>
+
+            <!-- Selección del pedido -->
+            <label for="pedido">Pedido:</label>
+            <select id="pedido" name="pedido" required disabled>
+                <option value="">Seleccione un pedido</option>
+                <!-- Aquí se llenan los pedidos basados en el cliente -->
+            </select>
+
+            <!-- Selección del producto -->
+            <label for="producto">Producto:</label>
+            <select id="producto" name="producto" required disabled>
+                <option value="">Seleccione un producto</option>
+                <!-- Aquí se llenan los productos basados en el pedido -->
+            </select>
+
+            <!-- Botón para agregar tarea -->
+            <button type="submit">Agregar Tarea</button>
+        </form>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

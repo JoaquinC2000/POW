@@ -1,98 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Porky Cakes</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <header class="header">
-      <!-- <a href="#home" class="logo"><img src="recursos/logoPorky.png" alt=""></a> -->
 
-      <nav class="navbar">
-        <a href="">home</a>
-        <a href="">Productos</a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Porky Cakes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
 
-        <div class="input-box">
-          <div class="search">
-            <input type="text" placeholder="Buscar" class="input-field" />
-            <i class="bx bx-search icon"></i>
-          </div>
-        </div>
-      </nav>
+<body>
+  <header class="header">
+    <a href="#home"><img src="recursos/logoPorky.png" class="logo" alt=""></a>
+
+    <div class="input-box">
+      <div class="search">
+        <input type="text" placeholder="Buscar" class="input-field" />
+        <i class="bx bx-search icon"></i>
+      </div>
+    </div>
+    <nav class="navbar">
+      <a href="">home</a>
+      <a href="">Productos</a>
       <i class="bx bx-cart-alt"></i>
-    </header>
-    <section>
-        <div class="container mt-5">
-            <h1 class="mb-4">Agregar Tarea</h1>
+      <i class='bx bxs-user user'></i>
+    </nav>
+    <div class="nav-menu-btn">
+      <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+    </div>
+  </header>
+  <section>
+    <div class="mt-5 contenedor">
+      <h1 class="mb-4">Crear Tarea</h1>
 
-            <div class="descripcion-box">
-                <textarea id="autoExpand" placeholder="holaquetal" wrap="soft" class="descripcion"></textarea>
+      <div class="descripcion-box">
+        <textarea id="autoExpand" class="descripcion" required></textarea>
+        <label for="autoExpand" class="label">Descripción</label>
+      </div>
 
-                <label for="descripcion" class="label">Descripción</label>
-            </div>
-
-            <input type="text" id="searchInput" placeholder="Search entities..." class="form-control mb-3">
-    
-            <div class="d-flex justify-content-between mb-3">
-                <select id="filterField" class="form-select">
-                    <option value="">Filter by field</option>
-                    <option value="name">Name</option>
-                    <option value="email">Email</option>
-                </select>
-    
-                <select id="sortField" class="form-select">
-                    <option value="">Sort by</option>
-                    <option value="id">ID</option>
-                    <option value="name">Name</option>
-                </select>
-            </div>
-    
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody id="entitiesTableBody">
-                    <!-- Data will be dynamically inserted here -->
-                </tbody>
-            </table>
-    
-            <!-- <nav>
-                <ul id="pagination" class="pagination"></ul>
-            </nav> -->
-    
-            <div class="mt-4">
-                <h2 id="formTitle">Add New Entity</h2>
-                <form id="entityForm">
-                    <input type="hidden" id="entityId">
-                    <div class="mb-3">
-                        <input type="text" id="name" class="form-control" placeholder="Name">
-                    </div>
-                    <div class="mb-3">
-                        <input type="email" id="email" class="form-control" placeholder="Email">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Save</button>
-                </form>
-            </div>
+      <div class="fecha-box">
+        <div class="fecha-inicio box">
+          <label for="fecha.inicio">Fecha Inicio</label>
+          <input type="date" id="fecha.inicio" class="mb-3">
         </div>
-    </section>
-    <script src="script.js"></script>
-  </body>
+        <div class="fecha-final box">
+          <label for="fecha-final">Fecha Final</label>
+          <input type="date" id="fecha-final" class="mb-3">
+        </div>
+      </div>
+
+      <div class="fecha-box">
+
+        <div class="prioridad box">
+          <label for="prioridad">Prioridad</label>
+          <select id="prioridad">
+            <option value="" selected disabled>Selecciona una opcion</option>
+            <option value="Alta">Alta</option>
+            <option value="Media">Media</option>
+            <option value="Baja">Baja</option>
+          </select>
+        </div>
+
+        <div class="estado box">
+          <label for="estado">Estado</label>
+          <select id="estado">
+            <option value="" selected disabled>Selecciona una opcion</option>
+            <option value="Pendiente">Pendiente</option>
+            <option value="Iniciado">Iniciado</option>
+            <option value="Terminado">Terminado</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="cliente box">
+        <label for="cliente">Cliente:</label>
+        <select id="cliente" name="cliente" required>
+          <option value="">Seleccione un cliente</option>
+          <option value="pendiente">Rolando</option>
+          <option value="iniciado">PDF</option>
+          <option value="terminado">Sanches</option>
+        </select>
+      </div>
+
+      <div class="pedido box">
+        <!-- Selección del pedido -->
+        <label for="pedido">Fecha pedido:</label>
+        <select id="pedido" name="pedido" required disabled>
+          <option value="">Seleccione un pedido</option>
+          <!-- Aquí se llenan los pedidos basados en el cliente -->
+        </select>
+      </div>
+
+      <div class="producto box">
+        <!-- Selección del producto -->
+        <label for="producto">Productos del pedido:</label>
+        <select id="producto" name="producto" required disabled>
+          <option value="">Seleccione un producto</option>
+          <!-- Aquí se llenan los productos basados en el pedido -->
+        </select>
+      </div>
+
+      <button type="submit" class="btn">Guardar</button>
+      
+  </section>
+  <script src="script.js"></script>
+</body>
+
 </html>
