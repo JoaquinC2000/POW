@@ -49,23 +49,23 @@ html{
 
 
 
-
+.contenedor{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: 100vh;
+}
 
 .medio{
-    /* min-height: 100vh;
-    min-height: 100dvh;
-    background-color: var(--base-clr);
-    color: var(--texto-clr);
-    display: grid;
-    grid-template-columns: auto 1fr; */
-
-    height: 81vh;
+    display: flex;
+    height: 100vh;
     width: 100%;
-    background-color: darkcyan;
+    background-color: var(--color-linea);
+    
 }
 .barra-lateral{
     width: 250px;
-    height: 100%;
+    height: 100vh;
     overflow: hidden;
     padding: 20px 15px;
     background-color: var(--color-barra-lateral);
@@ -163,115 +163,71 @@ html{
 }
 
 
+
 /* ======================================================================================== */
 /* ======================================================================================== */
 /* ======================================================================================== */
 
-/* #sidebar{
-    box-sizing: border-box;
-    height: 100vh;
-    width: 250px;
-    padding: 5px 0.5em;
-    background-color: rgba(0, 0, 0, 0.3);
-    border-right: 1px solid rgba(0, 0, 0, 0.1);
-
-    position: sticky;
-    top: 0;
-    align-items: start;
-    transition: 300ms ease-in-out;
-    overflow: hidden;
-    text-wrap: nowrap;
-}
-#sidebar.close{
-    padding: 5px;
-    width: 68px;
-}
-#sidebar ul{
-    list-style: none;
-    
-}
-#sidebar > ul > li:first-child{
+.tabla{
     display: flex;
-    justify-content: flex-end;
-    margin-bottom: 10px;
-    .logo{
-        font-weight: 600;
-    }   
-}
- #sidebar ul li.active, .active span{
-    color: var(--acento-clr);
-
-    svg{
-        fill: var(--acento-clr);
-    }
-}
-
-#sidebar a, #sidebar .barra-desplegable, #sidebar .logo{
-    border-radius: .5em;
-    padding: .85em;
-    text-decoration: none;
-    color: var(--texto-clr);
-    display: flex;
-    align-items: center;
-    gap: 1em;
-}
-
-.barra-desplegable{
+    flex-direction: column;
     width: 100%;
+    height: 100vh;
+    /* border: 2px solid red; */
+}
+
+
+/* Estilos para la tabla */
+table {
+    width: 100%;
+    justify-content: center;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 0px 0;
+    font-size: 18px;
     text-align: left;
-    background: none;
     border: none;
-    font: inherit;
-    cursor: pointer;
-}   
-#sidebar svg{
-    flex-shrink: 0;
-}
-#sidebar a span, #sidebar .barra-desplegable span{
-    flex-grow: 1;
-}
-#sidebar a:hover, #sidebar .barra-desplegable:hover{
-    background-color: var(--hover-clr);
-}
-#sidebar .sub-menu{
-    display: grid;
-    grid-template-rows: 0fr;
-    transition: 300ms ease-in-out;
-
-    > div{
-        overflow: hidden;
-    }
-}
-#sidebar .sub-menu.show{
-    grid-template-rows: 1fr;
-}
-.barra-desplegable svg{
-    transition: 200ms ease;
 }
 
-.rotar svg:last-child{
-    rotate: -90deg;
-    fill: rgb(255, 255, 255);
- }
-.rotar #icon{
-    rotate: -180deg;
-}
-#sidebar .sub-menu a{
-    padding-left: 2em;
+/* Bordes y fondo de las cabeceras */
+th {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px;
 }
 
-#toggle-btn{
-    margin-left: auto;
-    padding: 1em;
+/* Bordes y espaciado de las celdas */
+td, th {
+    border: 1px solid #ddd;
+    padding: 12px;
+}
+
+/* Color de fondo alterno para las filas */
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Cambia el color de fondo al pasar el cursor */
+tbody tr:hover {
+    background-color: #ddd;
+}
+
+/* Estilo para los botones de Ver Mapa y Ver Provincias */
+.view-map, .view-provinces, .view-region {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 12px;
     border: none;
-    border-radius: .5em;
-    background: none;
+    border-radius: 4px;
     cursor: pointer;
-
-    svg{
-        transition: rotate 150ms ease;
-    }
+    font-size: 16px;
 }
-#toggle-btn:hover{
-    background-color: var(--hover-clr);
-} */
+
+/* Cambia el color de los botones al pasar el cursor */
+.view-map:hover, .view-provinces:hover, .view-region:hover {
+    background-color: #45a049;
+}
+
+#provincesTable{
+    display: none;
+}
