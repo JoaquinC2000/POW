@@ -14,8 +14,8 @@
         <div>
             <header class="header text-center">
                 <div class="container d-flex aling-items-center justify-content-between">
-                    <svg class="logo col-3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                        width="32" height="32" viewBox="0 0 32 32">
+                    <svg class="logo col-3" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
                         <defs>
                             <linearGradient id="btc-c" x1="50%" x2="50%" y1="0%" y2="100%">
                                 <stop offset="0%" stop-color="#FFF" stop-opacity=".5" />
@@ -26,7 +26,8 @@
                                 filterUnits="objectBoundingBox">
                                 <feOffset dy=".5" in="SourceAlpha" result="shadowOffsetOuter1" />
                                 <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation=".5" />
-                                <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1" />
+                                <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out"
+                                    result="shadowBlurOuter1" />
                                 <feColorMatrix in="shadowBlurOuter1"
                                     values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.199473505 0" />
                             </filter>
@@ -38,7 +39,9 @@
                                 <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation=".5" />
                                 <feColorMatrix in="shadowBlurOuter1"
                                     values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.204257246 0" />
-                            </filter></defs><g fill="none" fill-rule="evenodd">
+                            </filter>
+                        </defs>
+                        <g fill="none" fill-rule="evenodd">
                             <use fill="#000" filter="url(#btc-a)" xlink:href="#btc-b" />
                             <use fill="#F7931A" xlink:href="#btc-b" />
                             <use fill="url(#btc-c)" style="mix-blend-mode: soft-light" xlink:href="#btc-b" />
@@ -49,11 +52,11 @@
                             </g>
                         </g>
                     </svg>
-        
+
                     <h1 class="m-0 mx-auto">Encabezado con titulo</h1>
                 </div>
             </header>
-            
+
             <div class="medio">
                 <div class="barra-lateral">
                     <div class="nombre-pagina">
@@ -107,9 +110,10 @@
                     <div class="linea"></div>
                 </div>
 
+
                 <div class="tabla">
                     <div id="countriesTable">
-                        <table border="2" >
+                        <table border="2">
                             <thead>
                                 <tr>
                                     <th>País</th>
@@ -118,14 +122,14 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                
+
                             </tbody>
                         </table>
                     </div>
 
                     <div id="provincesTable">
                         <h3 id="selectedCountry">Pais:</h3>
-                        <table border="2" >
+                        <table border="2">
                             <thead>
                                 <tr>
                                     <th>Pcia/Region</th>
@@ -134,12 +138,29 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                
+
                             </tbody>
                         </table>
                     </div>
+
+                    <div id="localitiesTable">
+                        <h3 id="selectedCountry">Localidad:</h3>
+                        <table border="2">
+                            <thead>
+                                <tr>
+                                    <th>Localidad</th>
+                                    <th>Ver mapa</th>
+                                    <th>Localidad</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="buttons" id="buttons"></div>
                 </div>
-                
             </div>
         </div>
         <div>

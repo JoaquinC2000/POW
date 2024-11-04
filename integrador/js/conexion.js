@@ -77,8 +77,9 @@ $(document).ready(function () {
                 $('.view-region').on('click', function () {
                     const regionId = $(this).data('id');
                     const regionName = $(this).data('name');
-                    
-                    alert(`Cargando información de la región ${regionName} con ID ${regionId}`);
+                    $('#provincesTable').hide(); // Oculta la tabla de países
+                    $('#localitiesTable').show(); // Muestra la tabla de provincias
+                    // alert(`Cargando información de la región ${regionName} con ID ${regionId}`);
                 });
             },
             error: function (error) {
@@ -88,52 +89,50 @@ $(document).ready(function () {
     }
 
     
-    // function loadLocalities(idProvincia, countryName, provinceName, searchTerm = '') {
-    //     // Mostrar el filtro solo para la vista de localidades
-    //     $('#localityFilterContainer').show();
-    //     $('#localityFilter').show();
+    function loadLocalities(idProvincia, countryName, provinceName, searchTerm = '') {
+        // Mostrar el filtro solo para la vista de localidades
+        $('#localityFilterContainer').show();
+        $('#localityFilter').show();
     
-    //     // Configurar el evento input solo una vez para evitar duplicación
-    //     $('#localityFilter').off('input').on('input', function () {
-    //         const searchTerm = $(this).val();
-    //         loadLocalities(idProvincia, countryName, provinceName, searchTerm); // Recargar con el término de búsqueda
-    //     });
+        // Configurar el evento input solo una vez para evitar duplicación
+        $('#localityFilter').off('input').on('input', function () {
+            const searchTerm = $(this).val();
+            loadLocalities(idProvincia, countryName, provinceName, searchTerm); // Recargar con el término de búsqueda
+        });
     
-    //     $.ajax({
-    //         url: http://localhost/POW-Practica-Parcial/Parcial2023/backend/apipaises/route.php?option=list_localidades&idProvincia=${idProvincia}&limit=${limit}&order=nombre&order_dir=desc&search=${searchTerm},
-    //         method: 'GET',
-    //         dataType: 'json',
-    //         success: function (response) {
-    //             const localities = response.data;
-    //             $('#localitiesTable tbody').empty();
-    //             $('#countryName').text(País origen: ${countryName});
-    //             $('#provincieName').text(Localidades de la provincia ${provinceName});
+        $.ajax({
+            url: `http://localhost/apipaises/route.php?option=list_localidades&idProvincia=${idProvincia}&limit=${limit}&order=nombre&order_dir=desc&search=${searchTerm}`,
+            method: 'GET',
+            dataType: 'json',
+            success: function (response) {
+                const localities = response.data;
+                $('#localitiesTable tbody').empty();
+                $('#countryName').text("País origen: ${countryName}");
+                $('#provincieName').text("Localidades de la provincia ${provinceName}");
     
-    //             localities.forEach(locality => {
-    //                 $('#localitiesTable tbody').append(`
-    //                     <tr>
-    //                         <td>${locality.nombre}</td>
-    //                         <td><button class="view-map" data-name="${locality.nombre}">Ver mapa</button></td>
-    //                         <td><button class="view-region" data-id="${locality.idProvincia}" data-name="${locality.nombre}">Ver región</button></td>
-    //                     </tr>
-    //                 `);
-    //             });
-    //             $('#localitiesContainer').show();
+                localities.forEach(locality => {
+                    $('#localitiesTable tbody').append(`
+                        <tr>
+                            <td>${locality.nombre}</td>
+                            <td><button class="view-map" data-name="${locality.nombre}">Ver mapa</button></td>
+                            <td><button class="view-region" data-id="${locality.idProvincia}" data-name="${locality.nombre}">Ver región</button></td>
+                        </tr>
+                    `);
+                });
+                $('#localitiesContainer').show();
     
-    //             $('.view-map').on('click', function () {
-    //                 const localityName = $(this).data('name');
-    //                 alert(Mostrando mapa de la localidad ${localityName});
-    //             });
-    //         },
-    //         error: function (error) {
-    //             console.error('Error al cargar las localidades', error);
-    //         }
-    //     });
-    // }
+                $('.view-map').on('click', function () {
+                    const localityName = $(this).data('name');
+                    alert("Mostrando mapa de la localidad ${localityName}");
+                });
+            },
+            error: function (error) {
+                console.error('Error al cargar las localidades', error);
+            }
+        });
+    }
 
-
-
-
+    
 
     // Cargar la primera página al inicio
     loadCountries(currentPage);
