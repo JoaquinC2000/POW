@@ -24,6 +24,9 @@ $(document).ready(function () {
                     `);
                 });
 
+                // const totalPages = Math.ceil(respnse.total / limit);
+                // createPaginationButtons(currentPage, totalPages);
+
                 // Asignar eventos a los botones
                 $('.view-map').on('click', function () {
                     const countryName = $(this).data('name');
@@ -50,7 +53,7 @@ $(document).ready(function () {
     // Función para cargar las provincias
     function loadProvinces(idPais, countryName) {
         $.ajax({
-            url: `http://localhost/apipaises/route.php?option=list_provincias&idPais=5&limit=10&order=nombre&order_dir=desc`,
+            url: `http://localhost/apipaises/route.php?option=list_provincias&idPais=5&limit=${limit}&order=nombre&order_dir=desc`,
             method: 'GET',
             dataType: 'json',
             success: function (response) {
@@ -130,6 +133,50 @@ $(document).ready(function () {
                 console.error('Error al cargar las localidades', error);
             }
         });
+    }
+
+    function createPaginationButtons(currentPage, totalPages) {
+        const range = 2;
+        let paginationHtml = '<nav aria-label="Page navigation example"><ul class="pagination">';
+
+        paginationHtml += `<li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
+                               <a class="page-link" href="#" onclick="changePage(${currentPage - 1})">Previous</a>
+                           </li>`;
+
+        if (currentPage > range + 1) {
+            paginationHtml += `<li class="page-item"><a class="page-link" href="#" onclick="changePage(1)">1</a></li>`;
+            paginationHtml += `<li class="page-item disabled"><span class="page-link">...</span></li>`;
+        }
+
+        const startPage = Math.max(1, currentPage - range);
+        const endPage = Math.min(totalPages, currentPage + range);
+
+        for (let i = startPage; i <= endPage; i++) {
+            paginationHtml += `<li class="page-item ${currentPage === i ? 'active' : ''}">
+                                   <a class="page-link" href="#" onclick="changePage(${i})">${i}</a>
+                               </li>`;
+        }
+
+        if (currentPage + range < totalPages) {
+            paginationHtml += `<li class="page-item disabled"><span class="page-link">...</span></li>`;
+            paginationHtml += `<li class="page-item"><a class="page-link" href="#" onclick="changePage(${totalPages})">${totalPages}</a></li>`;
+        }
+
+        paginationHtml += `<li class="page-item ${currentPage === totalPages ? 'disabled' : ''}">
+                               <a class="page-link" href="#" onclick="changePage(${currentPage + 1})">Next</a>
+                           </li>`;
+
+        paginationHtml += `</ul></nav>`;
+        $('#buttons').html(paginationHtml);
+    }
+
+    function changePage(page) {
+        const totalPages = Math.ceil(response.count / limit);
+        if(page < 1 || page > totalPages) return;
+        currentPage = page;
+        const offset = (page - 1) * limit;
+        const url = `http://localhost/apipaises/route.php?option=list_paises&limit=${limit}&offset=${offset}&order=nombre&order_dir=desc`
+        loadCountries(url);
     }
 
     
