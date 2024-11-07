@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obtener Paises</title>
+</head>
+<body>
+    <button onclick="obtenerPaises()">Obtener Paises</button>
+    <div id="resultado"></div>
+
+    <script>
+        function obtenerPaises() {
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", 'obtener_paises.php', true);
+            xhr.onload = function(){
+                if(xhr.status === 200){
+                    document.getElementById("resultado").innerHTML = xhr.responseText;
+                }
+            };
+            xhr.send();
+        }
+    </script>
+</body>
+</html>

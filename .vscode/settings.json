@@ -5,6 +5,8 @@
         "Aleatorio",
         "alternar",
         "boton",
+        "Cliente",
+        "direccion",
         "Ejer",
         "Eliminar",
         "Estadísticas",
@@ -35,6 +37,7 @@
         "Registrarse",
         "Reiniciar",
         "resultado",
+        "telefono",
         "texto",
         "válido"
     ]

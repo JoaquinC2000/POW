@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <form id="clienteForm" method="post">
+        <input type="text" id="nombre_cliente" placeholder="Nombre del cliente" required>
+        <input type="text" id="telefono_cliente" placeholder="Teléfono del cliente" required>
+        <input type="text" id="direccion_cliente" placeholder="Dirección del cliente" required>
+
+        <button type="submit">Agregar Cliente</button>
+    </form>
+
+    <div id="clienteList">
+
+    </div>
+
+    <script>
+        $(document).ready(function (){
+            $("#clienteForm").submit(function(event){
+                event.preventDefault();
+
+                let nombre_cliente = $("#nombre_cliente").val();
+                let telefono_cliente = $("#telefono_cliente").val();
+                let direccion_cliente = $("#direccion_cliente").val();
+
+                $.ajax({
+                    url: "php/agregar_cliente.php",
+                    method: "POST",
+                    data: {
+                        nombre_cliente: nombre_cliente,
+                        telefono_cliente: telefono_cliente,
+                        direccion_cliente: direccion_cliente
+                    },
+                    dataType: "text",
+                    success: function(response){
+                        $("#respuesta").html(response);
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        console.log("Error:", textStatus, errorThrown);
+                        $("#respuesta").html("Error al agregar cliente");
+                    }
+                });
+            });
+        });
+    </script>
+    <!-- <script src="js/insertarCliente.js"></script> -->
+    <!-- <script src="js/mostrarCliente.js"></script> -->
+</body>
+</html>
