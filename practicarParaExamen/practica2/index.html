@@ -9,6 +9,7 @@
 
 </head>
 <body>
+    <h3>Agregar Clientes</h3>
     <form id="clienteForm" method="post">
         <input type="text" id="nombre_cliente" placeholder="Nombre del cliente" required>
         <input type="text" id="telefono_cliente" placeholder="Teléfono del cliente" required>
@@ -17,9 +18,8 @@
         <button type="submit">Agregar Cliente</button>
     </form>
 
-    <div id="clienteList">
-
-    </div>
+    <div id="respuesta"></div>
+    <div id="clienteList"></div>
 
     <script>
         $(document).ready(function (){
@@ -31,7 +31,7 @@
                 let direccion_cliente = $("#direccion_cliente").val();
 
                 $.ajax({
-                    url: "php/agregar_cliente.php",
+                    url: "/practica/practica2/php/agregar_cliente.php",
                     method: "POST",
                     data: {
                         nombre_cliente: nombre_cliente,
@@ -50,7 +50,5 @@
             });
         });
     </script>
-    <!-- <script src="js/insertarCliente.js"></script> -->
-    <!-- <script src="js/mostrarCliente.js"></script> -->
 </body>
 </html>

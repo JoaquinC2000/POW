@@ -10,17 +10,20 @@
         die("Conexion fallida: " . $conn->connect_error);
     }
 
-    // Obtener datos del formulario
-    $nombre_cliente = $_POST['nombre_cliente'];
-    $telefono_cliente = $_POST['telefono_cliente'];
-    $direccion_cliente = $_POST['direccion_cliente'];
+    if(isset($_POST['nombre_cliente']) && isset($_POST['telefono_cliente']) && isset($_POST['direccion_cliente'])){
+        $nombre_cliente = $_POST['nombre_cliente'];
+        $telefono_cliente = $_POST['telefono_cliente'];
+        $direccion_cliente = $_POST['direccion_cliente'];
 
-    $sql = "INSERT INTO Cliente (nombre_cliente, telefono_cliente, direccion_cliente) VALUES ('$nombre_cliente', '$telefono_cliente', '$direccion_cliente')";
+        $sql = "INSERT INTO Cliente (nombre_cliente, telefono_cliente, direccion_cliente) VALUES ('$nombre_cliente', '$telefono_cliente', '$direccion_cliente')";
 
-    if($conn->query($sql) === TRUE){
-        echo "Cliente agregado correctamente";
+        if($conn->query($sql) === TRUE){
+            echo "Cliente agregado correctamente";
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        echo "Error: Faltan datos";
     }
     $conn->close();
 ?>
