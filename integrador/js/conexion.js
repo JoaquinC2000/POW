@@ -1,7 +1,7 @@
 $(document).ready(function () {
     // Variables para la paginación
-    let currentPage = 1; 
-    const limit = 10; 
+    let currentPage = 1;
+    const limit = 10;
 
     const apiUrl = (page) => `http://localhost/apipaises/route.php?option=list_paises&limit=10&offset=&order=nombre&order_dir=desc`;
 
@@ -18,8 +18,8 @@ $(document).ready(function () {
                     $('#countriesTable tbody').append(`
                         <tr>
                             <td>${country.nombre}</td>
-                            <td><button class="view-map" data-name="${country.nombre}" data-x="${country.x}" data-y="${country.y}">Ver mapa</button></td>
-                            <td><button class="view-provinces" data-id="${country.idPais}" data-name="${country.nombre}">Ver provincias</button></td>
+                            <td><button class="view-map btn btn-primary" data-name="${country.nombre}" data-x="${country.x}" data-y="${country.y}" data-bs-toggle="modal" data-bs-target="#mapModal">Ver mapa</button></td>
+                            <td><button class="view-provinces btn btn-secondary" data-id="${country.idPais}" data-name="${country.nombre}">Ver provincias</button></td>
                         </tr>
                     `);
                 });
@@ -32,7 +32,10 @@ $(document).ready(function () {
                     const countryName = $(this).data('name');
                     const x = $(this).data('x');
                     const y = $(this).data('y');
-                    alert(`Mostrando mapa de ${countryName} en las coordenadas (${x}, ${y})`);
+                    // Actualiza el contenido del modal
+                    $('#mapModalLabel').text(`Mapa de ${countryName}`);
+                    $('#mapContainer').html(`
+                        <iframe src="https://www.google.com/maps?q=${x},${y}&hl=es;z=14&output=embed" width="100%" height="400px"></iframe>`);
                 });
 
                 $('.view-provinces').on('click', function () {
@@ -91,18 +94,18 @@ $(document).ready(function () {
         });
     }
 
-    
+
     function loadLocalities(idProvincia, countryName, provinceName, searchTerm = '') {
         // Mostrar el filtro solo para la vista de localidades
         $('#localityFilterContainer').show();
         $('#localityFilter').show();
-    
+
         // Configurar el evento input solo una vez para evitar duplicación
         $('#localityFilter').off('input').on('input', function () {
             const searchTerm = $(this).val();
             loadLocalities(idProvincia, countryName, provinceName, searchTerm); // Recargar con el término de búsqueda
         });
-    
+
         $.ajax({
             url: `http://localhost/apipaises/route.php?option=list_localidades&idProvincia=${idProvincia}&limit=${limit}&order=nombre&order_dir=desc&search=${searchTerm}`,
             method: 'GET',
@@ -112,7 +115,7 @@ $(document).ready(function () {
                 $('#localitiesTable tbody').empty();
                 $('#countryName').text("País origen: ${countryName}");
                 $('#provincieName').text("Localidades de la provincia ${provinceName}");
-    
+
                 localities.forEach(locality => {
                     $('#localitiesTable tbody').append(`
                         <tr>
@@ -123,7 +126,7 @@ $(document).ready(function () {
                     `);
                 });
                 $('#localitiesContainer').show();
-    
+
                 $('.view-map').on('click', function () {
                     const localityName = $(this).data('name');
                     alert("Mostrando mapa de la localidad ${localityName}");
@@ -172,15 +175,16 @@ $(document).ready(function () {
 
     function changePage(page) {
         const totalPages = Math.ceil(response.count / limit);
-        if(page < 1 || page > totalPages) return;
+        if (page < 1 || page > totalPages) return;
         currentPage = page;
         const offset = (page - 1) * limit;
         const url = `http://localhost/apipaises/route.php?option=list_paises&limit=${limit}&offset=${offset}&order=nombre&order_dir=desc`
         loadCountries(url);
     }
 
-    
+
 
     // Cargar la primera página al inicio
     loadCountries(currentPage);
 });
+

@@ -47,27 +47,3 @@ cloud.addEventListener('click', () => {
     })
 });
 
-
-
-
-
-const lists_paises = document.getElementById('countriesTable');
-const buttons = document.getElementById('buttons');
-const limit = 10;
-let urlPaises = 'http://localhost/apipaises/route.php?option=list_paises&limit=${limit}&offset=0&order=nombre&order_dir=desc';
-let totalPaises = 0;
-let currentPage = 1;
-
-const getPaises = async (url) => {
-    try{
-        const response = await fetch(url);
-        const results = await response.json();
-        totalPaises = results.total;
-
-        createPaginationButtons(currentPage, Math.ceil(totalPaises / limit));
-    } catch(error){
-        console.log(error);
-    }
-};
-
-

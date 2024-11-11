@@ -41,6 +41,7 @@ header{
 
 .logo{
     height: 60px;
+    /* cursor: pointer; */
 }
 
 .menu{
@@ -83,7 +84,9 @@ label{
     background-color: #c10b38;
 }
 
-
+main{
+    padding-top: 100px;
+}
 
 footer{
     background-color: #333333;

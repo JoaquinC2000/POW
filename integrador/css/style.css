@@ -5,7 +5,7 @@
     --linea-clr: #42434a;
     --hover-clr: #151822;
     --texto-clr: #e6e6ef;
-    --acento-clr: #5e63ff;
+    --acento-clr: #8cff5ebd;
     --texto-secundario-clr: #b0b3c1;
 
 
@@ -33,7 +33,7 @@ html{
     line-height: 24px;
 }
 .header {
-    background-color: #007bff;
+    background-color: #193d01c4;
     color: white;
     padding: 20px 0;
 }
@@ -53,7 +53,7 @@ html{
     display: flex;
     flex-direction: column;
     gap: 15px;
-    height: 100vh;
+    height: 200px;
 }
 
 .medio{
@@ -96,9 +96,9 @@ html{
     align-items: center;
 
 }
-.barra-lateral .nombre-pagina ion-icon{
-    min-width: 50px;
-    font-size: 40px;
+.barra-lateral .nombre-pagina i{
+    min-width: 70px;
+    font-size: 70px;
     cursor: pointer;
 }
 .barra-lateral .nombre-pagina span{
@@ -119,11 +119,12 @@ html{
     border-radius: 10px;
     color: var(--color-boton-texto);
 }
-.barra-lateral .boton ion-icon{
+.barra-lateral .boton i{
     border: 2ps solid red;
     min-width: 50px;
     font-size: 25px;
 } 
+
 
 /* ================================ menu navegacion */
 .barra-lateral .navegacion li{
@@ -142,7 +143,7 @@ html{
     background-color: var(--color-barra-lateral);
     color: var(--color-texto-menu);
 }
-.barra-lateral .navegacion ion-icon{
+.barra-lateral .navegacion i{
     min-width: 50px;
     font-size: 20px;
 }
@@ -150,7 +151,7 @@ html{
     background-color: var(--color-menu-hover);
     color: var(--color-menu-hover-text); 
 }
-.barra-lateral .navegacion ion-icon{
+.barra-lateral .navegacion i{
     min-width: 50px;
     font-size: 20px;
 }
@@ -164,71 +165,3 @@ html{
 
 
 
-/* ======================================================================================== */
-/* ======================================================================================== */
-/* ======================================================================================== */
-
-.tabla{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100vh;
-    /* border: 2px solid red; */
-}
-
-
-/* Estilos para la tabla */
-table {
-    width: 100%;
-    justify-content: center;
-    border-collapse: collapse;
-    border-spacing: 0;
-    margin: 0px 0;
-    font-size: 18px;
-    text-align: left;
-    border: none;
-}
-
-/* Bordes y fondo de las cabeceras */
-th {
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px;
-}
-
-/* Bordes y espaciado de las celdas */
-td, th {
-    border: 1px solid #ddd;
-    padding: 12px;
-}
-
-/* Color de fondo alterno para las filas */
-tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-/* Cambia el color de fondo al pasar el cursor */
-tbody tr:hover {
-    background-color: #ddd;
-}
-
-/* Estilo para los botones de Ver Mapa y Ver Provincias */
-.view-map, .view-provinces, .view-region {
-    background-color: #4CAF50;
-    color: white;
-    padding: 8px 12px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-/* Cambia el color de los botones al pasar el cursor */
-.view-map:hover, .view-provinces:hover, .view-region:hover {
-    background-color: #45a049;
-}
-
-#provincesTable,
-#localitiesTable{
-    display: none;
-}

@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+.contenedor{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: 200px;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    text-align: center;
+    padding: 1em;
+}
+header img{
+    width: 80px;
+    height: auto;
+}
+
+
+
+/* Contenido Principal */
+main {
+    flex: 1;
+    padding: 20px;
+}
