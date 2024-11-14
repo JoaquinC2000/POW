@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap'); */
 
 *{
     margin: 0;
@@ -9,24 +9,21 @@
 }
 
 body, html{
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
     position: relative;
     background-image: linear-gradient(
-        rgba(0, 0, 0, 0.5), 
-        rgba(0, 0, 0, 0.5)), 
-        url(../img/menu.jpg);
+        rgba(255, 0, 149, 0.5), 
+        rgba(133, 74, 128, 0.5)); 
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
 }
-
 .contenedor{
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
 }
-
 header{
     width: 100%;
     position: fixed;
@@ -38,16 +35,21 @@ header{
     padding: 0 5%;
     height: 80px;
     transition:  0.5s ease-in-out;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1),
 }
 
 .logo{
-    height: 30px;
+    height: 70px;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5))
 }
 
 .menu{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.menu a{
+    text-decoration: none;
 }
 .item{
     margin: 0 15px;
@@ -65,14 +67,16 @@ header{
 }
 .menu-icono{
     width: 40px;
+    display: none;
 }
 
 label{
     cursor: pointer;    
-    display: none;
+    color: #f2f2f2;
+    /* display: none; */
 }
 
-.btn{
+.boton{
     padding: 7px 24px;
     border-radius: 30px;
     background-color: #ff2258;
@@ -80,26 +84,95 @@ label{
     font-weight: 600;
     cursor: pointer;
 }
-.btn:hover{
+.boton:hover{
     background-color: #c10b38;
 }
-main{
+
+
+.main{
     flex: 1;
-    margin: 130px 215px 30px 215px;
-    padding: 50px;
-    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    padding-bottom: 170px;
 }
-main .h3{
+.menu-cliente{
+    margin-top:150px;
+}
+.main .contenido{
+    background: rgba(0, 0, 0, 0.6);
+    width: 550px;
+    padding: 40px 50px;
+    /* text-align: center; */
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5),
+                0 0 10px rgba(0, 0, 0, 0.7),
+                0 0 10px rgba(0, 0, 0, 0.9);
+    
+}
+.main .contenido-iniciar-sesion{
+    height: 530px;
+}
+.main .contenido-registrar{
+    margin-top: 109px;
+    height: 780px;
+}
+
+.main .contenido .box{
+    width: 100%;
+    border-radius: 5px;
+    border:var(--border);
+    padding:12px 14px;
+    font-size: 18px;
+    margin:10px 0;
+}
+.main .h3{
     font-size: 35px;
     font-weight: 600;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
     color: #fff;
 }
-.button{
-    width: 200px;
-
+.main .contenido a{
+    /* color: #3498db; */
 }
+.main .contenido a:hover{
+    text-decoration: solid;
+}
+.box-button{
+    text-align: center;
+    height: 85px;
+}
+.button{
+    margin-top: 20px;
+    padding: 8px 0;
+    font-size: 20px;
+    letter-spacing: 1px;
+    width: 200px;
+    border: none;
+}
+.button:hover{
+    border: none;
+}
+.registrar{
+    margin-top: 10px;
+    color: #f2f2f2;
+    text-align: center;
+}
+.registrar a{
+    color: #3498db;
+    font-weight: 700;
+    padding-left: 5px;
+    font-weight: 500;
+}
+.registrar a:hover{
+    color: #3059fd;
+}
+
+
 footer{
     display: flex;
     justify-content: space-between;
@@ -112,7 +185,7 @@ footer{
         padding: 30px;
         margin: 0;
     }
-    label{
+    .menu-icono{
         display: initial;
     }
     .menu{
@@ -127,7 +200,7 @@ footer{
         margin: 0 0 20px 0;
         width: 100%;
     }
-    .btn{
+    .boton{
         width: 100%;
     }
     #menu:checked ~ .menu{
