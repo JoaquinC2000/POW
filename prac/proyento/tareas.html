@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porky Cakes</title>
+    <link rel="icon" href="img/logoPorky.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="contenedor">
+        <header id="header">
+            <a href=""><img src="img/logoPorky.png" class="logo" alt=""></a>
+    
+            <input type="checkbox" id="menu">
+            <label for="menu">
+                <img src="img/list.svg" class="menu-icono" alt="">
+            </label>
+            <ul class="menu">
+                <a href="index.html"><li class="item">Inicio</li></a>
+                <a href="productos.html"><li class="item">Productos</li></a>
+                <a href="tareas.html"><li class="item">Tareas</li></a>
+                <a href="clientes.html"><li class="item">Clientes</li></a>
+                <a href="iniciar_Sesion.html"><li class="boton">Perfil</li></a>
+                
+            </ul>
+        </header>
+        <main class="bg-light container menu-cliente">
+            <h2 class="my-4 text-center">Tabla de Tareas</h2>
+            <table class="table table-striped table-hovertable-bordered text-center align-middle">
+                <thead class="table-primary">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Descripcion</th>
+                        <th scope="col">Fecha de inicio</th>
+                        <th scope="col">Fecha de finalizacion</th>
+                        <th scope="col">Prioridad</th>
+                        <!-- <th scope="col">Estado</th>
+                        <th scope="col">Producto</th>
+                        <th scope="col">Cliente</th> -->
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tareaContainer">
+                    
+                </tbody>
+            </table>
+        </main>
+        <div class="modal fade" id="modalEdital" tabindex="-1" aria-labelledby="modalEditalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-3 fw-1" id="modalEditalLabel">Editar tarea</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editForm">
+                            <div class="mb-3">
+                                <label for="descripcion" class="col-form-label label pl">Description:</label>
+                                <textarea class="form-control" id="descripcion"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="fecha_inicio" class="col-form-label label">Fecha de inicio:</label>
+                                <input type="date" class="form-control" id="fecha_inicio">
+                            </div>
+                            <div class="mb-3">
+                                <label for="fecha_finalizacion" class="col-form-label label">Fecha de finalización:</label>
+                                <input type="date" class="form-control" id="fecha_finalizacion">
+                            </div>
+                            <div class="mb-3">
+                                <label for="prioridad" class="col-form-label label">Prioridad:</label>
+                                <select class="form-control" id="prioridad">
+                                    <option value="alta">Alta</option>
+                                    <option value="media">Media</option>
+                                    <option value="baja">Baja</option>
+                                </select>
+                                
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary" id="guardar" data-tipo="tarea" data-id="3">Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

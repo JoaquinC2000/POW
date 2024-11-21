@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Porky Cakes</title>
+    <link rel="icon" href="img/logoPorky.png" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
@@ -11,29 +12,26 @@
 <body>
     <div class="contenedor">
         <header id="header">
-            <a href=""><img src="img/aws.svg" class="logo" alt=""></a>
+          <a href=""><img src="img/logoPorky.png" class="logo" alt=""></a>
     
             <input type="checkbox" id="menu">
             <label for="menu">
                 <img src="img/list.svg" class="menu-icono" alt="">
             </label>
             <ul class="menu">
-                <a href="index.html"><li class="item">Inicio</li></a>
-                <a href="productos.html"><li class="item">Productos</li></a>
-                <a href="tareas.html"><li class="item">Tareas</li></a>
-                <a href="clientes.html"><li class="item">Clientes</li></a>
-                <a href="iniciar_Sesion.html"><li class="btn">Perfil</li></a>
-                
-            </ul>
+              <!-- <a href=""><li class="item">Inicio</li></a> -->
+              <a href="registrar.html"><li class="item">Registrarse</li></a>
+              <a href="iniciar_Sesion.html"><li class="boton">Iniciar Sesión</li></a>
+          </ul>
         </header>
         <main class="main">
             <div class="contenido contenido-iniciar-sesion">
                 
-                <form>
+                <form id="login-form">
                     <h3 class="h3">Iniciar Sesion</h3>
                     <div class="mb-3">
                         <label for="email" class="form-label fw-bold fs-5">E-mail</label>
-                        <input type="text" class="form-control mb-4" id="email" required>
+                        <input type="text" class="form-control mb-4" id="email" placeholder="Ingresa tu correo" required>
                     </div>
 
                     <div class="mb-2">

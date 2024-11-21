@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+
+}
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+header .auth-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+header .auth-links a:hover {
+    text-decoration: underline;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+nav ul li {
+    margin-left: 20px;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+
+h3.logo-footer{
+    margin-top: 1px;
+    color: #fff;
+}
+
+
+.footer-basic-centered {
+    background-color: #292c2f;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    text-align: center;
+    font: normal 18px sans-serif;
+    padding: 45px;
+    margin-top: 80px;
+    margin-top: 50px;
+}
+
+.footer-basic-centered .footer-company-motto {
+    color: #fff;
+    font-size: 24px;
+    margin: 0;
+    padding-bottom: 25px;
+}
+
+.footer-basic-centered .footer-derechos {
+    color: #8f9296;
+    font-size: 14px;
+    margin: 0;
+}
+
+#carouselExampleIndicators {
+    /* width: 80%; Cambia el porcentaje para ajustar el ancho */
+    margin: 0 auto; /* Centrar el carrusel */
+}
+
+#carouselExampleIndicators .carousel-inner img {
+    object-fit: cover; /* Ajusta cómo se muestran las imágenes */
+    height: 100vh; /* Asegura que las imágenes ocupen toda la altura */
+}
+
+#map{
+    width: 90%;
+    height: 500px;
+    margin-top: 20px;
+}

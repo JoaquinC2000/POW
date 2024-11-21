@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porky Cakes</title>
+    <link rel="icon" href="img/logoPorky.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="contenedor">
+        <header id="header">
+            <a href=""><img src="img/logoPorky.png" class="logo" alt=""></a>
+
+            <input type="checkbox" id="menu">
+            <label for="menu">
+                <img src="img/list.svg" class="menu-icono" alt="">
+            </label>
+            <ul class="menu">
+                <a href="index.html">
+                    <li class="item">Inicio</li>
+                </a>
+                <a href="productos.html">
+                    <li class="item">Productos</li>
+                </a>
+                <a href="tareas.html">
+                    <li class="item">Tareas</li>
+                </a>
+                <a href="clientes.html">
+                    <li class="item">Clientes</li>
+                </a>
+                <a href="iniciar_Sesion.html">
+                    <li class="boton">Perfil</li>
+                </a>
+            </ul>
+        </header>
+        <main class="bg-light container menu-producto">
+            <h2 class="my-4 text-center">Tabla de productos</h2>
+            <!-- <button type="button" class="btn btn-success mb-3" id="btnAgregar" data-bs-toggle="modal"
+                data-bs-target="#exampleEdital">Agregar Producto</button> -->
+            <table class="table table-striped table-hovertable-bordered text-center align-middle">
+                <thead class="table-primary">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">precio</th>
+                        <th scope="col">cantidad de porciones</th>
+                        <th scope="col">descripcion</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="productosContainer">
+
+                </tbody>
+            </table>
+        </main>
+        <div class="modal fade" id="modalEditar" tabindex="-1" aria-labelledby="modalEditarLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-3 fw-1" id="modalEditarLabel">Editar cliente</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editForm">
+                            <div class="mb-3">
+                                <label for="nombre-producto" class="col-form-label label pl">Nombre:</label>
+                                <input type="text" class="form-control" id="nombre-producto">
+                            </div>
+                            <div class="mb-3">
+                                <label for="precio-vta" class="col-form-label label">Precio de venta:</label>
+                                <input type="text" class="form-control" id="precio-vta">
+                            </div>
+                            <div class="mb-3">
+                                <label for="cant-porciones" class="col-form-label label">cantidad de porciones:</label>
+                                <input type="text" class="form-control" id="cant-porciones">
+                            </div>
+                            <div class="mb-3">
+                                <label for="descripcion" class="col-form-label label">descripcion:</label>
+                                <input type="text" class="form-control" id="descripcion">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary" id="guardar" data-tipo="producto"
+                            data-id="2">Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalAgregar" tabindex="-1" aria-labelledby="modalAgregarLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-3 fw-1" id="modalAgregarLabel">Editar cliente</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editForm">
+                            <div class="mb-3">
+                                <label for="nombre-producto-agregar" class="col-form-label label pl">Nombre:</label>
+                                <input type="text" class="form-control" id="nombre-producto-agregar">
+                            </div>
+                            <div class="mb-3">
+                                <label for="precio-vta-agregar" class="col-form-label label">Precio de venta:</label>
+                                <input type="text" class="form-control" id="precio-vta-agregar">
+                            </div>
+                            <div class="mb-3">
+                                <label for="cant-porciones-agregar" class="col-form-label label">cantidad de porciones:</label>
+                                <input type="text" class="form-control" id="cant-porciones-agregar">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary" id="agregar">Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
